@@ -1,22 +1,26 @@
 package com.chubb.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import com.chubb.request.Order;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
-@RestController
-public class OrderController {
-  @GetMapping("/order")
-  String getOrder() {
-    return "hello";
-  }
+import com.chubb.request.Order1;
+import com.chubb.service.OrderService;
 
-  @PostMapping("/order")
-  public Order saveOrder(@RequestBody @Valid Order order) {
-    return order;
-  }
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+
+    @Autowired
+    private OrderService service;
+
+    @GetMapping
+    public String getOrder() {
+        return "hello";
+    }
+
+    @PostMapping
+    public Order1 saveOrder(@Valid @RequestBody Order1 order) {
+        return service.insertOrder(order);
+    }
 }
