@@ -1,0 +1,130 @@
+{
+  "info": {
+    "_postman_id": "170d177b-dc70-41cf-b06f-8db43dffdc51",
+    "name": "mongo-spring",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23523823"
+  },
+  "item": [
+    {
+      "name": "Add student",
+      "id": "3d53c629-fcd5-4853-8128-d2a4136004d1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"rollNumber\": 102,\r\n  \"name\": \"Johnnny\",\r\n  \"address\": \"Mumbai\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/addStudent",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "addStudent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET – Fetch all",
+      "id": "49773f9f-ad77-42aa-8b55-ea5f3937aef8",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/fetchStudents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "fetchStudents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET – Fetch by ID",
+      "id": "6888c427-bceb-4a93-8ca3-8a0daf230ea3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/getStudent/101",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "getStudent",
+            "101"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT – Update student",
+      "id": "2b23316b-1a90-4a27-bddd-e84e6bcaf08a",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"rollNumber\": 101,\r\n  \"name\": \"John Updated\",\r\n  \"address\": \"Bangalore\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/updateStudent",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "updateStudent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "4c2ffd95-cb12-4341-8ae7-edad6c8bca46",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/deleteStudent/101",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "deleteStudent",
+            "101"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "workspace": {
+    "id": "048cefc1-6c6b-4099-8df9-bbd0a0d3da66"
+  },
+  "entities": {
+    "collections": [
+      "..\\postman\\collections\\mongo-spring.postman_collection.json"
+    ],
+    "environments": [],
+    "specs": [],
+    "flows": [],
+    "globals": []
+  }
+}
