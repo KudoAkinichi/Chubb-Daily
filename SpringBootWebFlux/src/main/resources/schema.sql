@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS tutorials (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(220),
+  description VARCHAR(250),
+  published BOOLEAN
+);

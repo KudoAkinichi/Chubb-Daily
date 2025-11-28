@@ -1,0 +1,293 @@
+{
+  "info": {
+    "_postman_id": "cfd497cf-b23d-4e05-b85e-7708ea3cbef5",
+    "name": "ReactiveSpringFlightApp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Airline",
+      "id": "7f852389-e52b-459b-b7dd-43967fdbf458",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/admin/airlines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "admin",
+            "airlines"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Airports",
+      "id": "dab63b44-7886-4a93-93de-746e1ab12dab",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"iataCode\": \"BLR\",\r\n  \"name\": \"Kempegowda International Airport\",\r\n  \"city\": \"Bangalore\",\r\n  \"country\": \"India\",\r\n  \"timezone\": \"Asia/Kolkata\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/admin/airports",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "admin",
+            "airports"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Flight Inventory",
+      "id": "d26a1231-6ef3-42f1-bd7f-38068e4c78e8",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"airlineCode\": \"6E\",\r\n  \"flightNumber\": \"6E6789\",\r\n  \"origin\": \"BOM\",\r\n  \"destination\": \"DEL\",\r\n  \"departureDateTime\": \"2025-11-25T18:00:00\",\r\n  \"arrivalDateTime\": \"2025-11-25T20:30:00\",\r\n  \"aircraftType\": \"Airbus A321\",\r\n  \"totalSeats\": 200,\r\n  \"baseFare\": 4800.00,\r\n  \"currency\": \"INR\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/admin/inventory",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "admin",
+            "inventory"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Flight Details",
+      "id": "e4f9e092-465c-4ee8-ace4-4757438425f5",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/flights/69237110af2a8818c1712c27",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "flights",
+            "69237110af2a8818c1712c27"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Seat Map",
+      "id": "96d9aea8-20a1-4f07-b322-c3f13a5efc32",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/flights/69237110af2a8818c1712c27/seats",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "flights",
+            "69237110af2a8818c1712c27",
+            "seats"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Flights",
+      "id": "402587c0-9a44-493a-9c57-08f293aa6809",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"origin\": \"DEL\",\r\n  \"destination\": \"BOM\",\r\n  \"departureDate\": \"2025-11-25\",\r\n  \"passengers\": 2,\r\n  \"tripType\": \"ONEWAY\",\r\n  \"cabinClass\": \"ECONOMY\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/flights/search",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "flights",
+            "search"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Booking",
+      "id": "44d916c5-6548-4b0a-bc5d-fcf1a77352dd",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "bookings"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Booking by PNR",
+      "id": "766ee996-ea01-4798-a06a-400ca33db543",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/bookings/pnr/PNR72L98Q",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "bookings",
+            "pnr",
+            "PNR72L98Q"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Booking History",
+      "id": "e888d821-afe1-4bbf-90ba-2fa75147acd7",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/bookings/user/rohit.sharma@example.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "bookings",
+            "user",
+            "rohit.sharma@example.com"
+          ]
+        }
+      }
+    },
+    {
+      "name": "New Request",
+      "id": "749fd6da-9f7b-4f71-bc41-134b57b0ac59",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/bookings/PNR72L98Q",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "bookings",
+            "PNR72L98Q"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Test Health Check",
+      "id": "914c2dc7-e7d8-44d6-803f-fadc81ba7ae8",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8081/api/v1/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "v1",
+            "health"
+          ]
+        }
+      }
+    }
+  ]
+}
