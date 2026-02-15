@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "b0af8f30-0664-47de-b5cc-f34458038774",
+    "name": "spring-boot-login",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Access public resource",
+      "id": "791f1d32-4b59-4ca9-b333-bcad5fa22c43",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:9090/api/test/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "test",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access protected resource without Login",
+      "id": "11e7ec53-fc2d-4ab4-b9f2-ee62f8446575",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/test/user",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "test",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "id": "ea40f042-b285-48c7-9e9c-55113aee2e95",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "app.jwtCookieName",
+            "value": "bezkoder",
+            "type": "text",
+            "uuid": "d932b1ab-2fef-477d-9049-b263c0ab909d"
+          },
+          {
+            "key": "app.jwtSecret",
+            "value": "KmZeV9OK6Ey74UNmARySOCGJx+yyi7qSODOkl78zW3AHuWMSShnfcf37Wk1Gl/EKvhsFvXjHX/z8dXg0AHjiLw==",
+            "type": "text",
+            "uuid": "e5114e0b-6ea9-4385-8c17-0489f27c49b6"
+          },
+          {
+            "key": "app.jwtExpirationMs",
+            "value": "86400000",
+            "type": "text",
+            "uuid": "36412ec8-1388-408f-9ba7-a870f6b89d5b"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\" :\"mod\",\r\n    \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/auth/signin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "auth",
+            "signin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Signup",
+      "id": "099343c6-858e-425d-aa0c-9712ae59bad4",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"fgvg\",\r\n  \"email\": \"reg@bezkoder.com\",\r\n  \"password\": \"12345678\",\r\n  \"role\": [\"mod\"]\r\n}\r\n\r\n\r\n\r\n\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/auth/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "auth",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "jwt",
+    "jwt": [
+      {
+        "key": "secret",
+        "value": "KmZeV9OK6Ey74UNmARySOCGJx+yyi7qSODOkl78zW3AHuWMSShnfcf37Wk1Gl/EKvhsFvXjHX/z8dXg0AHjiLw==",
+        "type": "string"
+      },
+      {
+        "key": "isSecretBase64Encoded",
+        "value": false,
+        "type": "boolean"
+      },
+      {
+        "key": "algorithm",
+        "value": "HS256",
+        "type": "string"
+      },
+      {
+        "key": "payload",
+        "value": "{}",
+        "type": "string"
+      },
+      {
+        "key": "addTokenTo",
+        "value": "header",
+        "type": "string"
+      },
+      {
+        "key": "headerPrefix",
+        "value": "Bearer",
+        "type": "string"
+      },
+      {
+        "key": "queryParamKey",
+        "value": "token",
+        "type": "string"
+      },
+      {
+        "key": "header",
+        "value": "{}",
+        "type": "string"
+      }
+    ]
+  }
+}
